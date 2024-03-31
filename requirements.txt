@@ -1,0 +1,5 @@
+onnxruntime-gpu
+PyYAML
+soundfile
+librosa
+httpx

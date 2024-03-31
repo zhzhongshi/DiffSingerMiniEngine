@@ -118,12 +118,16 @@ def acoustic_preprocess(name2token: list,
 def acoustic_infer(model: str, providers: list, tokens, durations, f0, speedup):
     session = utils.create_session(model, providers)
     mel = session.run(['mel'], {'tokens': tokens, 'durations': durations, 'f0': f0, 'speedup': speedup})[0]
+    session.end_profiling()
+    del(session)
     return mel
 
 
 def vocoder_infer(model: str, providers: list, mel, f0, force_on_cpu=True):
     session = utils.create_session(model, providers, force_on_cpu=force_on_cpu)
     waveform = session.run(['waveform'], {'mel': mel, 'f0': f0})[0]
+    session.end_profiling()
+    del(session)
     return waveform
 
 

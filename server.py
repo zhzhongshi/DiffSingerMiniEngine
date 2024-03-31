@@ -56,6 +56,14 @@ def models(request: BaseHTTPRequestHandler):
     request.end_headers()
     request.wfile.write(json.dumps(res).encode('utf8'))
 
+
+def getdict(request: BaseHTTPRequestHandler):
+    res = dictionary
+    request.send_response(200)
+    request.send_header('Content-Type', 'application/json')
+    request.end_headers()
+    request.wfile.write(json.dumps(res).encode('utf8'))
+
 """
 POST /rhythm HTTP/1.1
 Content-Type:application/json
@@ -71,7 +79,8 @@ HTTP/1.1 200 OK
 Content-Type:application/json
 {"phonemes":[
     {"name": "SP", "duration": 0.235995352268219}, 
-    {"name": "sh", "duration": 0.264004647731781}, {"name": "a", "duration": 1.5}
+    {"name": "sh", "duration": 0.264004647731781}, 
+    {"name": "a", "duration": 1.5}
 ]}
 """
 def rhythm(request: BaseHTTPRequestHandler):
@@ -100,6 +109,7 @@ def rhythm(request: BaseHTTPRequestHandler):
         request.end_headers()
         request.wfile.write(json.dumps(res).encode('utf8'))
         raise e
+    
     
 """
 POST /submit HTTP/1.1
@@ -344,6 +354,7 @@ failures = {}
 apis = {
     '/version': (version, ['GET']),
     '/models': (models, ['GET']),
+    '/getdict': (getdict, ['GET']),
     '/rhythm': (rhythm, ['POST']),
     '/submit': (submit, ['POST']),
     '/query': (query, ['POST']),

@@ -62,7 +62,6 @@ def create_session(model_path: str, providers: list, force_on_cpu: bool = False)
 
     # Create inference session
     session = ort.InferenceSession(path_or_bytes=model_path, sess_options=options, providers=providers)
-
     return session
 
 
