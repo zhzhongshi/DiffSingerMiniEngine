@@ -110,4 +110,5 @@ content-type: audio/wav
 ## 声明：
  请确保你制作数据集的数据来源合法合规，且数据提供者明确你在制作什么以及可能造成的后果 
  该项目为歌声合成项目，无法进行其他用途，请知晓
+ 本项目数据集来源：[Opencpop](https://wenet.org.cn/opencpop/liscense/)
  
