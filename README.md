@@ -106,3 +106,8 @@ content-type: audio/wav
 
 1. [Train with your own dataset](https://github.com/openvpi/DiffSinger/blob/refactor/pipelines/no_midi_preparation.ipynb) or download pretrained checkpoints from [here](https://github.com/openvpi/DiffSinger/releases/tag/v1.4.0).
 2. Export PyTorch checkpoints to ONNX format. See instructions [here](https://github.com/openvpi/DiffSinger/blob/refactor/docs/README-SVS-onnx.md).
+
+## 声明：
+ 请确保你制作数据集的数据来源合法合规，且数据提供者明确你在制作什么以及可能造成的后果 
+ 该项目为歌声合成项目，无法进行其他用途，请知晓
+ 
